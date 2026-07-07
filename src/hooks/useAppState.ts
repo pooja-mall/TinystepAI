@@ -41,25 +41,33 @@ export function useAppState() {
           parsed.childProfile = initialProfile;
         }
         // Migrate legacy profile name/age/gender to Pranooja / 2.7 Girl
-        if (parsed.childProfile && 
-            (parsed.childProfile.name === 'Aarav' || 
-             parsed.childProfile.name === 'Aryan' || 
-             parsed.childProfile.name === 'Aryan Sharma' || 
-             parsed.childProfile.name === 'Aarav Sharma' || 
-             parsed.childProfile.name === 'My Kid' || 
-             parsed.childProfile.age === 4)) {
-          parsed.childProfile = {
-            ...parsed.childProfile,
-            name: 'Pranooja',
-            age: 2.7,
-            gender: 'Girl',
-            interests: ['Drawing', 'Blocks', 'Animals'],
-            favoriteAnimals: ['Puppy', 'Kitten'],
-            favoriteColors: ['Pink', 'Yellow'],
-            allergies: [],
-            dietPreference: 'none',
-            languages: ['English']
-          };
+        if (parsed.childProfile) {
+          const cName = (parsed.childProfile.name || '').toLowerCase().trim();
+          const cGender = (parsed.childProfile.gender || '').toLowerCase().trim();
+          const cAge = parsed.childProfile.age;
+
+          if (
+            cName.includes('aarav') ||
+            cName.includes('aryan') ||
+            cName.includes('sharma') ||
+            cName.includes('my kid') ||
+            cAge === 4 ||
+            cGender === 'boy' ||
+            cGender.includes('boy')
+          ) {
+            parsed.childProfile = {
+              ...parsed.childProfile,
+              name: 'Pranooja',
+              age: 2.7,
+              gender: 'Girl',
+              interests: ['Drawing', 'Blocks', 'Animals'],
+              favoriteAnimals: ['Puppy', 'Kitten'],
+              favoriteColors: ['Pink', 'Yellow'],
+              allergies: [],
+              dietPreference: 'none',
+              languages: ['English']
+            };
+          }
         }
         return parsed;
       } catch (e) {

@@ -121,3 +121,30 @@ export interface AppState {
   }[];
   darkMode: boolean;
 }
+
+export interface StoryScene {
+  id: string;
+  pageNumber: number;
+  paragraph: string;
+  illustrationSvg: string; // SVG code or description
+}
+
+export interface StoryStudioBook {
+  id: string;
+  title: string;
+  theme: string;
+  mood: string;
+  length: '2 min' | '5 min' | '10 min';
+  language: string;
+  narrator: string;
+  moral: string;
+  quote: string;
+  readingTime: string;
+  scenes: StoryScene[];
+  discussionQuestions: string[];
+  offlineActivities: string[];
+  coverSvg: string;
+  isFavorited?: boolean;
+  createdAt: string;
+}
+

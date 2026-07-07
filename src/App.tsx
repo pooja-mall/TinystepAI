@@ -37,6 +37,8 @@ import LearningView from './components/views/LearningView';
 import WeeklyView from './components/views/WeeklyView';
 import FavoritesView from './components/views/FavoritesView';
 import SettingsView from './components/views/SettingsView';
+import StoryStudioView from './components/views/StoryStudioView';
+
 
 export default function App() {
   const {
@@ -114,6 +116,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: Home },
+    { id: 'story-studio', label: 'Story Studio ✨', icon: Sparkles },
     { id: 'activity', label: 'Play Activity', icon: Compass },
     { id: 'meals', label: 'Meal Plan', icon: ChefHat },
     { id: 'stories', label: 'Storyteller', icon: BookOpen },
@@ -367,6 +370,15 @@ export default function App() {
 
                   {activeTab === 'stories' && (
                     <StoryView
+                      childProfile={childProfile}
+                      favoritedStories={favoritedStories}
+                      onToggleFavorite={toggleFavoriteStory}
+                      onAddHistory={addHistoryItem}
+                    />
+                  )}
+
+                  {activeTab === 'story-studio' && (
+                    <StoryStudioView
                       childProfile={childProfile}
                       favoritedStories={favoritedStories}
                       onToggleFavorite={toggleFavoriteStory}

@@ -48,11 +48,11 @@ export default function DashboardView({ appState, onNavigate }: DashboardViewPro
 
   // Quick actions config
   const quickActions = [
-    { label: 'Generate Activity', icon: Compass, tab: 'activity', color: 'bg-primary text-white hover:bg-primary/95 shadow-soft' },
+    { label: 'Story Studio ✨', icon: Sparkles, tab: 'story-studio', color: 'bg-[#6C63FF] text-white hover:bg-indigo-600 shadow-soft font-bold' },
+    { label: 'Generate Activity', icon: Compass, tab: 'activity', color: 'bg-primary text-white hover:bg-primary/95 shadow-soft font-bold' },
     { label: 'Meal Planner', icon: ChefHat, tab: 'meals', color: 'bg-amber-400 text-slate-900 hover:bg-amber-500 shadow-soft font-bold' },
     { label: 'Create Story', icon: BookOpen, tab: 'stories', color: 'bg-emerald-400 text-slate-900 hover:bg-emerald-500 shadow-soft font-bold' },
-    { label: 'Ask Parent AI', icon: MessageSquare, tab: 'coach', color: 'bg-rose-400 text-slate-900 hover:bg-rose-500 shadow-soft font-bold' },
-    { label: 'Weekly Schedule', icon: Calendar, tab: 'weekly', color: 'bg-indigo-400 text-white hover:bg-indigo-500 shadow-soft' },
+    { label: 'Weekly Schedule', icon: Calendar, tab: 'weekly', color: 'bg-indigo-400 text-white hover:bg-indigo-500 shadow-soft font-bold' },
   ];
 
   return (
@@ -88,7 +88,7 @@ export default function DashboardView({ appState, onNavigate }: DashboardViewPro
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-6 bg-[#6C63FF] rounded-[2rem] text-white shadow-xl shadow-indigo-100 flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden"
+            className="p-6 bg-[#6C63FF] rounded-[2rem] text-white shadow-xl shadow-indigo-100 flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden animate-fade-in"
           >
             {/* Visual background sparkles */}
             <div className="absolute right-[-5%] top-[-5%] text-white/10 select-none">
@@ -97,7 +97,7 @@ export default function DashboardView({ appState, onNavigate }: DashboardViewPro
 
             <div className="z-10">
               <div className="flex items-center space-x-3 mb-2">
-                <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-white text-2xl shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-white text-2xl shadow-sm animate-pulse">
                   🦖
                 </div>
                 <div>
@@ -133,6 +133,42 @@ export default function DashboardView({ appState, onNavigate }: DashboardViewPro
               Update Profile
             </button>
           </motion.div>
+
+          {/* Flagship Feature Promo: Story Studio */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="p-6 bg-gradient-to-tr from-[#0F172A] to-[#1E1B4B] rounded-[2rem] text-white shadow-xl relative overflow-hidden border border-indigo-500/20"
+          >
+            <div className="absolute right-[-2%] bottom-[-10%] opacity-25 pointer-events-none text-indigo-400 select-none">
+              <Sparkles className="w-48 h-48 animate-pulse" />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-1.5 text-amber-400 font-bold text-[10px] uppercase tracking-wider">
+                  <Sparkles className="w-3.5 h-3.5 fill-current" />
+                  <span>Flagship Premium Feature</span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-black font-display text-white tracking-tight leading-tight">
+                  ✨ Story Studio: Custom Bedtime Narration
+                </h3>
+                <p className="text-xs text-slate-400 max-w-xl leading-relaxed">
+                  Compose, narrate, and listen to customized bedtime storybooks tailored dynamically to {child.name}'s age ({child.age} Yrs), interests, and favorite helper animals. Includes immersive full-screen Bedtime Mode.
+                </p>
+              </div>
+
+              <button
+                onClick={() => onNavigate('story-studio')}
+                className="px-5 py-3 bg-[#6C63FF] hover:bg-[#5b52e6] text-white font-extrabold text-xs rounded-2xl shadow-md shadow-indigo-950/40 hover:shadow-glow transition-all flex items-center gap-1.5 flex-shrink-0 cursor-pointer self-stretch md:self-auto justify-center"
+              >
+                <span>Launch Studio</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </motion.div>
+
 
           {/* B. Today's Plan Cards */}
           <div>

@@ -23,13 +23,13 @@ export function getStoryIllustration(animal: string, theme: string, color: strin
     background = `
       <defs>
         <linearGradient id="spaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#1E1B4B" />
-          <stop offset="60%" stop-color="#311042" />
-          <stop offset="100%" stop-color="#4A0E4E" />
+          <stop offset="0%" stopColor="#1E1B4B" />
+          <stop offset="60%" stopColor="#311042" />
+          <stop offset="100%" stopColor="#4A0E4E" />
         </linearGradient>
         <radialGradient id="planetGrad" cx="30%" cy="30%" r="70%">
-          <stop offset="0%" stop-color="#FFE082" />
-          <stop offset="100%" stop-color="#FF8F00" />
+          <stop offset="0%" stopColor="#FFE082" />
+          <stop offset="100%" stopColor="#FF8F00" />
         </radialGradient>
       </defs>
       <rect width="800" height="500" fill="url(#spaceGrad)" />
@@ -80,13 +80,13 @@ export function getStoryIllustration(animal: string, theme: string, color: strin
     background = `
       <defs>
         <linearGradient id="forestGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#E0F2FE" /> <!-- Sky blue -->
-          <stop offset="60%" stop-color="#F0FDF4" /> <!-- Soft mint -->
-          <stop offset="100%" stop-color="#DCFCE7" /> <!-- Pastel green -->
+          <stop offset="0%" stopColor="#E0F2FE" /> <!-- Sky blue -->
+          <stop offset="60%" stopColor="#F0FDF4" /> <!-- Soft mint -->
+          <stop offset="100%" stopColor="#DCFCE7" /> <!-- Pastel green -->
         </linearGradient>
         <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#FFFbeb" />
-          <stop offset="100%" stop-color="#FEF08A" />
+          <stop offset="0%" stopColor="#FFFbeb" />
+          <stop offset="100%" stopColor="#FEF08A" />
         </linearGradient>
       </defs>
       <rect width="800" height="500" fill="url(#forestGrad)" />
@@ -142,9 +142,9 @@ export function getStoryIllustration(animal: string, theme: string, color: strin
     background = `
       <defs>
         <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#0284C7" /> <!-- Sky Blue -->
-          <stop offset="40%" stop-color="#0369A1" /> <!-- Ocean Blue -->
-          <stop offset="100%" stop-color="#0F172A" /> <!-- Dark Abyss -->
+          <stop offset="0%" stopColor="#0284C7" /> <!-- Sky Blue -->
+          <stop offset="40%" stopColor="#0369A1" /> <!-- Ocean Blue -->
+          <stop offset="100%" stopColor="#0F172A" /> <!-- Dark Abyss -->
         </linearGradient>
       </defs>
       <rect width="800" height="500" fill="url(#oceanGrad)" />
@@ -180,9 +180,9 @@ export function getStoryIllustration(animal: string, theme: string, color: strin
     background = `
       <defs>
         <linearGradient id="defaultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#EEF2F6" />
-          <stop offset="50%" stop-color="#FAE8FF" /> <!-- Warm pink-violet -->
-          <stop offset="100%" stop-color="#E0E7FF" /> <!-- Soft blue -->
+          <stop offset="0%" stopColor="#EEF2F6" />
+          <stop offset="50%" stopColor="#FAE8FF" /> <!-- Warm pink-violet -->
+          <stop offset="100%" stopColor="#E0E7FF" /> <!-- Soft blue -->
         </linearGradient>
       </defs>
       <rect width="800" height="500" fill="url(#defaultGrad)" />
